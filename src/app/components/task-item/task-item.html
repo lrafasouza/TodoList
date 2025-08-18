@@ -1,0 +1,18 @@
+<div class="task" [ngClass]="{reminder: tarefa.concluido}">
+    <div class="card">
+        <div class="btn-check">
+            <input type="checkbox" (click)="OnToggle(tarefa)">
+        </div>
+        <div class="info-card">
+            <h3>{{tarefa.tarefa}}
+            </h3>
+            <p>{{tarefa.categoria}}</p>
+        </div>
+
+    </div>
+
+    <div class="btn-remove">
+        <fa-icon [icon]="faTimes" style="cursor: pointer;" [ngStyle]="{'color' : 'red'}"
+            (click)="OnDelete(tarefa)"></fa-icon>
+    </div>
+</div>

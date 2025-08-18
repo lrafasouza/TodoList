@@ -1,0 +1,22 @@
+.card-cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.input-cadastro {
+    display: flex;
+    gap: 10px;
+}
+
+.card-cadastro .cadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.categoria {
+    display: flex;
+    gap: 10px;
+}
