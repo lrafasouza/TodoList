@@ -1,59 +1,142 @@
 # TodoList
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.3.
+Uma aplicação de lista de tarefas moderna desenvolvida com Angular 20, que permite gerenciar tarefas de forma eficiente com interface intuitiva.
 
-## Development server
+## 🚀 Funcionalidades
 
-To start a local development server, run:
+- ✅ Adicionar novas tarefas com categorias
+- 📝 Editar tarefas existentes
+- 🗑️ Remover tarefas
+- ✔️ Marcar/desmarcar tarefas como concluídas
+- 🎯 Organização por categorias
+- 💾 Persistência de dados com JSON Server
+
+## 🛠️ Tecnologias
+
+- **Angular** 20.0.0
+- **TypeScript** 5.8.2
+- **FontAwesome** para ícones
+- **JSON Server** para API local
+- **RxJS** para programação reativa
+
+## 📋 Pré-requisitos
+
+- Node.js (versão 18 ou superior)
+- npm (gerenciador de pacotes)
+
+## 🔧 Instalação
+
+1. Clone o repositório:
+```bash
+git clone <https://github.com/lrafasouza/to-do-List.git>
+cd TodoList
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+## 🎯 Como usar
+
+### Desenvolvimento
+
+1. Inicie o servidor JSON (API local):
+```bash
+npm run server
+```
+
+2. Em outro terminal, inicie a aplicação Angular:
+```bash
+npm start
+```
+
+3. Acesse `http://localhost:4200` no seu navegador
+
+### Build para produção
+
+```bash
+npm run build
+```
+
+### Executar testes
+
+```bash
+npm test
+```
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── app/
+│   ├── components/          # Componentes da aplicação
+│   │   ├── add-task/       # Componente para adicionar tarefas
+│   │   ├── header/         # Cabeçalho da aplicação
+│   │   ├── task-item/      # Item individual de tarefa
+│   │   └── tasks/          # Lista de tarefas
+│   ├── services/           # Serviços da aplicação
+│   │   └── taskservice.ts  # Serviço para gerenciar tarefas
+│   └── Model/              # Modelos de dados
+│       └── Tarefa.ts       # Interface da tarefa
+├── styles.css              # Estilos globais
+└── main.ts                 # Arquivo principal
+```
+
+## 🎨 Interface
+
+A aplicação possui uma interface limpa e moderna com:
+- Header com título da aplicação
+- Formulário para adicionar novas tarefas
+- Lista de tarefas com opções de edição e remoção
+- Sistema de marcação de tarefas concluídas
+
+## 📡 API
+
+A aplicação utiliza JSON Server para simular uma API REST local:
+- **GET** `/tasks` - Listar todas as tarefas
+- **POST** `/tasks` - Criar nova tarefa
+- **PUT** `/tasks/:id` - Atualizar tarefa
+- **DELETE** `/tasks/:id` - Remover tarefa
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT.
+
+## 🔧 Comandos Angular CLI
+
+### Servidor de desenvolvimento
+
+Para iniciar um servidor de desenvolvimento local, execute:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Scaffolding de código
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para gerar um novo componente, execute:
 
 ```bash
 ng generate component component-name
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Build
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Para fazer o build do projeto execute:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Testes unitários
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+Para executar os testes unitários com [Karma](https://karma-runner.github.io), execute:
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 📚 Recursos Adicionais
 
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Para mais informações sobre o Angular CLI, visite a [documentação oficial](https://angular.dev/tools/cli).
