@@ -1,16 +1,25 @@
 <div class="container-tasks">
     <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
-
-    @if (this.tarefas.length === 0) {
-    <div class="empty-state">
-        <p>Nenhuma tarefa encontrada.</p>
-        <p>Adicione sua primeira tarefa acima!</p>
-    </div>
+    @if (this.loading) {
+        <div class="loading">
+            <div class="spinner"></div>
+            <p>Carregando tarefas...</p>
+        </div>
+    } @else if (this.error) {
+        <div class="error">
+            <p>{{ this.error }}</p>
+            <button (click)="ngOnInit()" class="retry-btn">Tentar Novamente</button>
+        </div>
+    } @else if (tarefas.length === 0) {
+        <div class="empty-state">
+            <p>Nenhuma tarefa encontrada.</p>
+            <p>Adicione sua primeira tarefa acima!</p>
+        </div>
     } @else {
-    @for (tarefa of tarefas; track $index) {
-    <app-task-item [tarefa]="tarefa" (OnDeleteTask)="deleteTask($event)"
-        (OnToggleConcluido)="toggleConcluido($event)"></app-task-item>
-    }
+        @for (tarefa of tarefas; track $index) {
+            <app-task-item [tarefa]="tarefa" (OnDeleteTask)="deleteTask($event)"
+                (OnToggleConcluido)="toggleConcluido($event)"></app-task-item>
+        }
     }
 </div>

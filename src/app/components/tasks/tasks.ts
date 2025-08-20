@@ -14,21 +14,28 @@ import { AddTask } from "../add-task/add-task";
 export class Tasks implements OnInit {
 
   public tarefas: Tarefa[] = []
+  public loading: boolean = true
   public error: string = ''
 
   constructor(private taskService: Taskservice) { }
 
   ngOnInit(): void {
+    this.loading = true;
     this.error = '';
-    this.taskService.getTasks().subscribe({
-      next: (dado) => {
-        this.tarefas = dado;
-      },
-      error: (err) => {
-        console.error('Erro ao carregar tarefas:', err);
-        this.error = 'Erro ao carregar tarefas. Verifique se o servidor está rodando.';
-      }
-    })
+    
+    setTimeout(() => {
+      this.taskService.getTasks().subscribe({
+        next: (dado) => {
+          this.tarefas = dado;
+          this.loading = false;
+        },
+        error: (err) => {
+          console.error('Erro ao carregar tarefas:', err);
+          this.error = 'Erro ao carregar tarefas. Verifique se o servidor está rodando.';
+          this.loading = false;
+        }
+      })
+    }, 500);
   }
 
   deleteTask(tarefa: Tarefa) {
