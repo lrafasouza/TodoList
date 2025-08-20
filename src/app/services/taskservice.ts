@@ -8,7 +8,7 @@ import { Tarefa } from '../../Model/Tarefa';
 })
 export class Taskservice {
 
-  private apiURL = 'http://localhost:3000/tasks'
+  private apiURL = 'https://my-json-server.typicode.com/lrafasouza/TodoList/tasks'
 
 
   constructor(private http: HttpClient) {
