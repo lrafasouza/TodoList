@@ -17,6 +17,7 @@ export class AddTask {
   public categoria: string = ''
   public concluido: boolean = false
   public mostrarFormulario: boolean = false;
+  public mostrarCheck: boolean = false;
 
   toggleFormulario() {
     this.mostrarFormulario = !this.mostrarFormulario;
@@ -31,10 +32,18 @@ export class AddTask {
     const novaTarefa = {
       tarefa: this.tarefa,
       categoria: this.categoria,
-      concluido: this.concluido
+      concluido: this.concluido,
+      criadoEm: new Date(),
+      atualizadoEm: new Date()
     }
 
     this.onAddTask.emit(novaTarefa);
+
+    this.mostrarCheck = true;
+
+    setTimeout(() => {
+      this.mostrarCheck = false;
+    }, 2000);
 
     this.tarefa = ''
     this.categoria = ''

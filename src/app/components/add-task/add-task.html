@@ -1,30 +1,29 @@
-@if (this.mostrarFormulario) {
-
 <div class="card-cadastro">
-    <div class="input-cadastro">
-        <label for="text">Task:</label>
-        <input type="text" name="text" placeholder="Adicionar Tarefa" id="text" [(ngModel)]="tarefa">
-    </div>
-
-    <div class="cadastro">
-        <div class="categoria">
-            <label for="Categoria">Category</label>
-            <select name="categoria" id="categoria" [(ngModel)]="categoria">
-                <option value="Selecione" disabled>Selecione</option>
-                @for (item of this.listaCategorias; track $index) {
-                <option [value]="item.value">{{item.label}}</option>
-                }
-            </select>
-        </div>
-
-        <div class="btn-salvar" (click)="onSubmit()">
-            <input type="submit" value="Save">
-        </div>
-
+    <div class="input-group">
+        <input type="text" 
+               class="input" 
+               name="text" 
+               placeholder="Adicionar Tarefa" 
+               id="text" 
+               [(ngModel)]="tarefa">
+        <button class="button--submit" 
+                type="submit" 
+                (click)="onSubmit()">
+            @if (!mostrarCheck) {
+                <span>Add</span>
+            } @else {
+                <svg class="check-icon" 
+                     viewBox="0 0 24 24" 
+                     width="20" 
+                     height="20" 
+                     fill="none"
+                     stroke="currentColor" 
+                     stroke-width="3" 
+                     stroke-linecap="round" 
+                     stroke-linejoin="round">
+                    <polyline points="20,6 9,17 4,12"></polyline>
+                </svg>
+            }
+        </button>
     </div>
 </div>
-}
-
-<button (click)="toggleFormulario()">
-    {{ mostrarFormulario ? 'Close' : 'New Task' }}
-</button>

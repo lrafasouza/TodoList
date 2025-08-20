@@ -2,12 +2,15 @@
     <app-add-task (onAddTask)="addTask($event)"></app-add-task>
 
 
-    <div class="menu">
-
+    @if (this.tarefas.length === 0) {
+    <div class="empty-state">
+        <p>Nenhuma tarefa encontrada.</p>
+        <p>Adicione sua primeira tarefa acima!</p>
     </div>
-
+    } @else {
     @for (tarefa of tarefas; track $index) {
     <app-task-item [tarefa]="tarefa" (OnDeleteTask)="deleteTask($event)"
         (OnToggleConcluido)="toggleConcluido($event)"></app-task-item>
+    }
     }
 </div>

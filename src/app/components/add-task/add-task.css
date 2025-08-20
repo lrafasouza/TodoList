@@ -3,11 +3,101 @@
     flex-direction: column;
     gap: 10px;
     margin-bottom: 10px;
+    font-family: var(--title);
 }
+
+.input-group {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+.input {
+    min-height: 50px;
+    max-width: 150px;
+    padding: 0 1rem;
+    color: #000000;
+    font-size: 15px;
+    border: 1px solid #5e4dcd;
+    border-radius: 15px 1px 1px 15px;
+    background-color: transparent;
+}
+
+
+.button--submit {
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 16px 16px 0;
+    background-color: #5e4dcd;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 60px;
+}
+
+.button--submit:hover {
+    background-color: #5e5dcd;
+}
+
+.check-icon {
+    color: #fff;
+    animation: checkAnimation 0.5s ease-in-out;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.button--submit span {
+    animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes checkAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(1px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.input:focus,
+.input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}
+
 
 .input-cadastro {
     display: flex;
     gap: 10px;
+}
+
+.input-cadastro input {
+    text-decoration: none;
+
 }
 
 .card-cadastro .cadastro {
@@ -20,3 +110,4 @@
     display: flex;
     gap: 10px;
 }
+

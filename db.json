@@ -1,16 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "3",
-      "tarefa": "Policia",
-      "categoria": "Treinar",
-      "concluido": false
-    },
-    {
-      "id": "4",
-      "tarefa": "Policia",
-      "categoria": "Treinar",
-      "concluido": false
-    }
-  ]
+  "tasks": []
 }

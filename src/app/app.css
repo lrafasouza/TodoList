@@ -5,12 +5,23 @@ footer {
     text-align: center;
 }
 
+footer p {
+    font-family: var(--title);
+    color: #ffffff;
+}
+
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=7825d1&c2=511591&gt=r&gd=dcc
+*/
+    background: rgba(120, 37, 209, 1.0);
+    background: radial-gradient(at center, rgba(120, 37, 209, 1.0), rgba(81, 21, 145, 1.0));
 }
 
 section>* {
@@ -23,4 +34,21 @@ section>* {
     justify-content: center;
     align-items: center;
     text-align: center;
+    font-family: var(--title);
+
+}
+
+footer .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.icones {
+    width: 5%;
+}
+
+.icones svg {
+    filter: brightness(0) invert(1);
 }
